@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Information, InputWrapp, Input, RadioWrapp } from '../Styles'
+import { Information, InputWrapp, Input, RadioWrapp } from '../../../Wizard/Styles'
  
 const InvoiceNumber: React.FC = () => {
 	const [invoice, setInvoice] = useState<any>(

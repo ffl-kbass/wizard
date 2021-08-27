@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Information, Input, InputWrapp } from '../Styles'
+import { Information, Input, InputWrapp } from '../../../Wizard/Styles'
  
 const Contact: React.FC = () => {
 	const [contact, setContact] = useState<any>(

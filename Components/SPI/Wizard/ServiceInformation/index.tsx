@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Table, TableWrapp, InputAndButton } from './Styles'
-import { Information, Input, Button } from '../Styles'
+import { Information, Input, Button } from '../../../Wizard/Styles'
  
 const ServiceInformation: React.FC = () => {
 	const [lineItems, setLineItem] = useState<any[]>(

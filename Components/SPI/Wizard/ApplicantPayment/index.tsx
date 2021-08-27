@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {
 
 } from './Styles'
-import { Information, Textarea, InputWrapp } from '../Styles'
+import { Information, Textarea, InputWrapp } from '../../../Wizard/Styles'
  
 const ApplicantPayment: React.FC = () => {
 	const [payment, setPayment] = useState<any>(
