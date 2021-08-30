@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Table, TableWrapp, InputAndButton } from './Styles'
-import { Information, Input, Button } from '../../../Wizard/Styles'
+import { Table, TableWrapp, InputAndButton, Button} from './Styles'
+import { Information, Input } from '../../../Wizard/Styles'
  
 const ServiceInformation: React.FC = () => {
 	const [lineItems, setLineItem] = useState<any[]>(
@@ -95,7 +95,11 @@ const ServiceInformation: React.FC = () => {
 							<td>
 								<InputAndButton>
 									<Input type="text" value={item.frn} onChange={(e) => updateItem(index, 'frn', e.target.value)}/>
-									<button>Find</button>
+									<button>
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+										<	path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+										</svg>
+									</button>
 								</InputAndButton>
 							</td>
 							<td>
@@ -127,7 +131,12 @@ const ServiceInformation: React.FC = () => {
 				</tbody>
 			</Table>
 		</TableWrapp>
-		<Button onClick={handleNewLineItem}>Add New Line Item</Button>
+		<Button onClick={handleNewLineItem}>
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+			</svg>
+			New Lineitem
+		</Button>
 	</>
   )
 }

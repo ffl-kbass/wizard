@@ -15,7 +15,7 @@ export const WizardWrapp = styled.div`
 	grid-template-rows: auto 2rem;
 	padding: 1rem;
 	border-radius: .25rem;
-	border: 1px hsl(180, 6%, 90%) solid;
+	border: 1px hsl(180, 5%, 88%) solid;
 	background-color: #ffffff;
 `;
 
@@ -41,8 +41,19 @@ export const ButtonWrapp = styled.div`
 		padding: .4rem .8rem;
 		font-weight: 600;
 		font-size: .875rem;
+		display: flex;
+		align-items: center;
 		:hover {
 			background-color: hsl(0, 0%, 95%)
+		}
+		svg {
+			:first {
+				margin-right: .5rem;
+			}
+			:last-of-type {
+				margin-left: .5rem;
+			}
+			height: 1rem;
 		}
 	}
 `;
@@ -54,9 +65,9 @@ export const Information = styled.div`
 	padding: .5rem;
 	margin-bottom: 1rem;
 	border-radius: .25rem;
-	border: solid 1px hsl(209, 100%, 55%);
-	color: hsl(209, 100%, 55%);
-	background-color: hsl(209, 100%, 95%);
+	border: solid 1px hsl(203, 100%, 89%);
+	color: hsl(211, 85%, 46%);
+	background-color: hsl(199, 100%, 95%);
 	h2 {
 		font-size: 1rem;
 		font-weight: bold;
@@ -71,7 +82,7 @@ export const Input = styled.input`
 	width: 100%;
 	padding: .5rem;
 	border-radius: .25rem;
-	border: 1px hsl(180, 6%, 90%) solid;
+	border: 1px hsl(180, 5%, 88%) solid;
 	background-color: ${props => props.disabled ? "hsl(0, 0%, 96%)" : "hsl(0, 0%, 100%)"};
 	:focus {
 		border: 1px hsl(213, 100%, 35%) solid;
@@ -102,7 +113,7 @@ export const Textarea = styled.textarea`
 	min-height: 12rem;
 	padding: 0 .25rem;
 	border-radius: .25rem;
-	border: 1px hsl(180, 6%, 90%) solid;
+	border: 1px hsl(180, 5%, 88%) solid;
 	background-color: ${props => props.disabled ? "hsl(0, 0%, 96%)" : "hsl(0, 0%, 100%)"};
 	:focus {
 		border: 1px hsl(213, 100%, 35%) solid;
@@ -115,7 +126,7 @@ export const RadioWrapp = styled.div`
 		background-color: hsl(0, 0%, 98%);
 		padding: 1rem;
 		border-radius: .25rem;
-		border: 1px hsl(180, 6%, 90%) solid;
+		border: 1px hsl(180, 5%, 88%) solid;
 		display: inline-flex;
 		flex-direction: column;
 	}
