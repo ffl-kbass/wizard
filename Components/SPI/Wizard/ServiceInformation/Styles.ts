@@ -5,13 +5,20 @@ export const TableWrapp = styled.div`
 	border: 1px hsl(180, 5%, 88%) solid;
 	border-radius: .25rem;
 	max-height: 18rem;
+	width: 100%;
 	overflow-y: scroll;
+	overflow-x: auto;
+
 	input {
 		padding: .25rem .35rem;
 	}
 `;
 
 export const Table = styled.table`
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;	
+	
 	th, td {
 		padding: .35rem .5rem;
 		text-align: left;
@@ -23,6 +30,41 @@ export const Table = styled.table`
 	}
 	th, tr:not(:last-child) {
 		border-bottom: 1px hsl(180, 5%, 88%) solid;
+	}
+
+	@media (max-width: 1024px) {
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		
+		td { 
+			border: none;
+			position: relative;
+			padding-left: 50%; 
+		}
+		
+		td:before { 
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+			font-weight: bold;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		
+		/*
+		Label the data
+		*/
+		td:before { content: attr(data-content); }
 	}
 `;
 

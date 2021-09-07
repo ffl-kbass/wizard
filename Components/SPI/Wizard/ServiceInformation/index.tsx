@@ -49,10 +49,6 @@ const ServiceInformation: React.FC = () => {
 		);
 	}
 
-	const test = () => {
-		console.log(lineItems)
-	}
-
   return (
 	<>
 		<Information>
@@ -92,7 +88,7 @@ const ServiceInformation: React.FC = () => {
 				<tbody>
 					{lineItems.map((item, index) =>
 						<tr key={index}>
-							<td>
+							<td data-content="FRN">
 								<InputAndButton>
 									<Input type="text" value={item.frn} onChange={(e) => updateItem(index, 'frn', e.target.value)}/>
 									<button>
@@ -102,28 +98,28 @@ const ServiceInformation: React.FC = () => {
 									</button>
 								</InputAndButton>
 							</td>
-							<td>
+							<td data-content="Bill Frequency">
 								<Input type="text" value={item.billFrequency} onChange={(e) => updateItem(index, 'billFrequency', e.target.value)}/>
 							</td>
-							<td>
+							<td data-content="Date">
 								<Input type="text" value={item.date} onChange={(e) => updateItem(index, 'date', e.target.value)}/>
 							</td>
-							<td>
+							<td data-content="Date Type">
 								<Input type="text" value={item.dateType} onChange={(e) => updateItem(index, 'dateType', e.target.value)}/>
 							</td>
-							<td>
+							<td data-content="Total Amount">
 								<Input type="number" value={item.totalAmount} onChange={(e) => updateItem(index, 'totalAmount', e.target.value)}/>
 							</td>
-							<td>
+							<td data-content="Discount Percentage">
 								<Input type="text" disabled value={item.discountPercentage} onChange={(e) => updateItem(index, 'discountPercentage', e.target.value)}/>
 							</td>
-							<td>
+							<td data-content="Discount Amount">
 								<Input type="number" value={item.discountAmount} onChange={(e) => updateItem(index, 'discountAmount', e.target.value)}/>
 							</td>
-							<td>
+							<td data-content="Applicant Portion Paid Date">
 								<Input type="text" value={item.applicationPortionPaidDate} onChange={(e) => updateItem(index, 'applicationPortionPaidDate', e.target.value)}/>
 							</td>
-							<td>
+							<td data-content="Applicant Check Number">
 								<Input type="text" value={item.applicantCheckNumber} onChange={(e) => updateItem(index, 'applicantCheckNumber', e.target.value)}/>
 							</td>
 						</tr>

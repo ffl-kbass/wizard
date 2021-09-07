@@ -19,8 +19,12 @@ export const MainContent = styled.div`
 
 export const Content = styled.div`
 	width: 100%;
-	padding: 2rem;
+	padding: .5rem;
 	overflow-y: auto;
+
+	@media (min-width: 1024px) {
+		padding: 2rem;
+	}
 `;
 
 export const NavBar = styled.div`
@@ -108,12 +112,16 @@ export const Account = styled.div`
 `;
 
 export const SideBar = styled.div`
+	display: none;
 	flex: none;
 	height: 100%;
 	width: 16rem;
-	display: grid;
 	grid-template-rows: 4rem auto;
 	background-color: hsl(213, 100%, 35%);
+
+	@media (min-width: 1024px) {
+		display: grid;
+	}
 `;
 
 export const SideBarContent = styled.ul`

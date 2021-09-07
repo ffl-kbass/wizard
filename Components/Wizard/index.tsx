@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, createRef} from 'react';
 import Staging from './Staging'
-import Link from 'next/link'
+import Modal from '../Modal'
 import { WizardWrapp, PageWrapp, ButtonWrapp } from './Styles'
 
 interface WizardProps {
@@ -12,7 +12,9 @@ const Wizard: React.FC<WizardProps> = ({children, stageTitles}) => {
 	const [stageIndex, setStageIndex] = useState<number>(0)
 	const [stages] = useState<any[]>(React.Children.toArray(children))
 	const [stageData, setStageData] = useState<any[]>(stageTitles)
+	const [isOpen, setIsOpen] = useState<boolean>(false)
 	const handleOnClick = e => () => setStageIndex(e);
+	const wizard = createRef<any>();
 
 
 	const nextClick = () => {
@@ -27,15 +29,28 @@ const Wizard: React.FC<WizardProps> = ({children, stageTitles}) => {
 		}
 	};
 
+	const openModal = () => {
+		setIsOpen(true)
+	}
+
+	const closeModal = () => {
+		setIsOpen(false)
+	}
+
+	const finish = () => {
+
+	}
+
 	return (
 		<PageWrapp>
+			<Modal path="/" show={isOpen} onClickClose={closeModal}/>
 			<Staging 
 				stages = {stageData}
 				stagePos = {stageIndex}
 				onClickValue={handleOnClick}
 			/>
 			<WizardWrapp>
-				<div>
+				<div ref={wizard}>
 					{(React.Children.count(children) == stageTitles.length ? stages[stageIndex] : 'Stages and Stage Titles must be equal.')}
 				</div>
 				<ButtonWrapp>
@@ -45,13 +60,15 @@ const Wizard: React.FC<WizardProps> = ({children, stageTitles}) => {
 							Previous
 						</button>
 						:
-						<Link href="/">
-							Cancel
-						</Link>
+						<button className="cancelled" onClick={openModal}>
+							Leave
+						</button>
 					)}
 					{(
 						stageIndex == stages.length - 1 ?
-						<button onClick={nextClick}>Finish</button>
+						<button className="finished" onClick={finish}>
+							Finish
+						</button>
 						:
 						<button onClick={nextClick}>
 							Next

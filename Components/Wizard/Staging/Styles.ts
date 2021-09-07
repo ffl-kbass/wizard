@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const StageWrapp = styled.div`
 	width: 100%;
 	height: 4rem;
+	flex: none;
 	display: flex;
 	overflow:hidden;
 `;
@@ -28,17 +29,11 @@ export const StageContent = styled.div`
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	padding: 0 1rem;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: none;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
-
-	@media (max-width: 768px) {
-		flex-wrap: wrap;
-		height: auto;
-	}
 `;
 
 interface StageProps {
@@ -53,9 +48,6 @@ export const Stage = styled.button<StageProps>`
 	margin: .5rem;
 	border-radius: .25rem;
 	position: relative;
-	:first-of-type {
-		/* margin-left: 3rem; */
-	}
 
 	:hover {
 		background-color: hsl(213, 100%, 98%);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
 	StageWrapp,
 	StageContentWrapp,
@@ -16,13 +16,15 @@ interface StagingData {
 const Staging: React.FC<StagingData> = ({stages, stagePos, onClickValue}) => {
 	const [styles, setStyles] = useState<any>({})
 	const [hasPage] = useState<boolean>(stages.length > 7)
+	const stage = useRef<any>()
 
 	useEffect(() => {
 		if(hasPage){
-			// 7 is the max number of stages that will fit before overflowing
-			if(((stages.length - 7) * 2) -.5 > stagePos){
+			//128 is the size of stage cell
+			let elements = Math.floor(stage.current.offsetWidth / 128);
+			if(stagePos + elements - 1 <= stages.length){
 				setStyles({
-					left: -64 * stagePos,
+					left: -128 * (stagePos - (stagePos == 0 ? 0 : 1)),
 				})
 			}
 		}
@@ -31,7 +33,7 @@ const Staging: React.FC<StagingData> = ({stages, stagePos, onClickValue}) => {
   return (
 	  <StageWrapp>
 		<StageContentWrapp>
-			<StageContent style={styles}>
+			<StageContent style={styles} ref={stage}>
 			{stages.map((stage, index) => 
 				<Stage key={index} active={(stagePos >= index)} onClick={onClickValue(index)}>
 					<div/>

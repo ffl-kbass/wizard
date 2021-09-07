@@ -6,17 +6,26 @@ export const PageWrapp = styled.div`
 	display: grid;
 	grid-template-rows: 4rem auto;
 	grid-row-gap: 1rem;
+	overflow: auto;
+	
+	@media (min-width: 1024px) {
+		overflow: hidden;
+	}
 `;
 
 export const WizardWrapp = styled.div`
 	height: 100%;
 	width: 100%;
 	display: grid;
-	grid-template-rows: auto 2rem;
+	grid-template-rows: auto 4rem;
 	padding: 1rem;
 	border-radius: .25rem;
 	border: 1px hsl(180, 5%, 88%) solid;
 	background-color: #ffffff;
+	
+	>div {
+		width: 100%;
+	}
 `;
 
 export const ButtonWrapp = styled.div`
@@ -24,6 +33,7 @@ export const ButtonWrapp = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	padding-top: 2rem;
 	button:last-child {
 		border-radius: .25rem;
 		padding: .4rem .8rem;
@@ -36,6 +46,20 @@ export const ButtonWrapp = styled.div`
 			background-color: hsl(209, 100%, 65%)
 		}
 	}
+	button.cancelled {
+		background-color: hsl(360, 98%, 52%);
+		color: hsl(0, 0%, 100%);
+		:hover {
+			background-color: hsl(360, 98%, 65%)
+		}
+	}
+	button.finished {
+		background-color: hsl(126, 75%, 43%);
+		color: hsl(0, 0%, 100%);
+		:hover {
+			background-color: hsl(126, 75%, 50%)
+		}
+	}
 	button,a {
 		border-radius: .25rem;
 		padding: .4rem .8rem;
@@ -43,9 +67,6 @@ export const ButtonWrapp = styled.div`
 		font-size: .875rem;
 		display: flex;
 		align-items: center;
-		:hover {
-			background-color: hsl(0, 0%, 95%)
-		}
 		svg {
 			:first {
 				margin-right: .5rem;
@@ -54,6 +75,11 @@ export const ButtonWrapp = styled.div`
 				margin-left: .5rem;
 			}
 			height: 1rem;
+		}
+	}
+	button {
+		:hover {
+			background-color: hsl(0, 0%, 95%)
 		}
 	}
 `;
@@ -159,4 +185,13 @@ export const Button = styled.button`
 	color: #ffffff;
 	font-weight: 600;
 	font-size: .875rem;
+`;
+
+export const Dialog = styled.div`
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	
 `;
