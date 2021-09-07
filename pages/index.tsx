@@ -7,7 +7,9 @@ export default function Home() {
         <Head>
           <title>Home Page</title>
         </Head>
-        <Link href="SPI">SPI Wizard</Link>
+        <div>
+          This is an empty home page.
+        </div>
       </>
   )
 }

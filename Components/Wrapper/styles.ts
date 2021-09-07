@@ -124,7 +124,8 @@ export const SideBarContent = styled.ul`
 	li {
 		width: 100%;
 		color: #ffffff;
-		button {
+		a {
+			display: block;
 			width: 100%;
 			padding: .5rem 1.5rem;
 			text-align: left;

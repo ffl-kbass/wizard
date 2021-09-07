@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import Link from 'next/link'
 import { 
   PageWrapp,
   SideBar,
@@ -27,7 +28,7 @@ function MyApp({ Component, pageProps }) {
           </LogoWrapp>
           <SideBarContent>
               <li>
-                <button>SPI Wizard</button>
+                <Link href="/SPI">SPI Wizard</Link>
               </li>
           </SideBarContent>
         </SideBar>
@@ -66,6 +67,7 @@ function MyApp({ Component, pageProps }) {
               <p>John Smith</p>
             </Account>
           </NavBar>
+          {/* Everything above here is really just a facade, it's not actually meant to do anything, and because of that does not require any dynamic components. */}
           <Content>
             <Component {...pageProps} />
           </Content>
