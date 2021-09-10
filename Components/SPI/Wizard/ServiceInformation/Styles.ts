@@ -6,8 +6,7 @@ export const TableWrapp = styled.div`
 	border-radius: .25rem;
 	max-height: 18rem;
 	width: 100%;
-	overflow-y: scroll;
-	overflow-x: auto;
+	overflow-y: auto;
 
 	input {
 		padding: .25rem .35rem;
@@ -36,6 +35,14 @@ export const Table = styled.table`
 		table, thead, tbody, th, td, tr { 
 			display: block; 
 		}
+
+		td {
+			padding: .25 0;
+		}
+
+		tr {
+			padding: .35rem .5rem;
+		}
 		
 		thead tr { 
 			position: absolute;
@@ -47,6 +54,10 @@ export const Table = styled.table`
 			border: none;
 			position: relative;
 			padding-left: 50%; 
+		}
+
+		tr:nth-child(even) {
+			background-color: hsl(180, 5%, 98%)
 		}
 		
 		td:before { 
@@ -117,6 +128,6 @@ export const Button = styled.button`
 	}
 	svg {
 		height: 1rem;
-		margin-right: .5rem;
+		margin-left: .5rem;
 	}
 `;

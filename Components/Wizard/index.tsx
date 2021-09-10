@@ -1,4 +1,5 @@
 import React, {useState, useEffect, createRef} from 'react';
+import { useRouter } from 'next/router'
 import Staging from './Staging'
 import Modal from '../Modal'
 import { WizardWrapp, PageWrapp, ButtonWrapp } from './Styles'
@@ -15,6 +16,8 @@ const Wizard: React.FC<WizardProps> = ({children, stageTitles}) => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 	const handleOnClick = e => () => setStageIndex(e);
 	const wizard = createRef<any>();
+	const router = useRouter()
+	const [query, setQuery] = useState<any>()
 
 
 	const nextClick = () => {
@@ -40,6 +43,12 @@ const Wizard: React.FC<WizardProps> = ({children, stageTitles}) => {
 	const finish = () => {
 
 	}
+
+	useEffect(() => {
+		setQuery(router.query.page)
+		console.log(router.query)
+		console.log(query)
+	}, []);
 
 	return (
 		<PageWrapp>
@@ -67,7 +76,7 @@ const Wizard: React.FC<WizardProps> = ({children, stageTitles}) => {
 					{(
 						stageIndex == stages.length - 1 ?
 						<button className="finished" onClick={finish}>
-							Finish
+							Complete
 						</button>
 						:
 						<button onClick={nextClick}>

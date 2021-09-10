@@ -5,12 +5,12 @@ import { Information, Input } from '../../../Wizard/Styles'
 const ServiceInformation: React.FC = () => {
 	const [lineItems, setLineItem] = useState<any[]>(
 		[{
-			frn: 'test',
-			billFrequency: 'Monthly',
-			date: '10/2020',
+			frn: '',
+			billFrequency: '',
+			date: '',
 			dateType: '',
 			totalAmount: 0,
-			discountPercentage: 0,
+			discountPercentage: 80,
 			discountAmount: 0,
 			applicationPortionPaidDate: '',
 			applicantCheckNumber: 0
@@ -128,10 +128,10 @@ const ServiceInformation: React.FC = () => {
 			</Table>
 		</TableWrapp>
 		<Button onClick={handleNewLineItem}>
+			New Lineitem
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
 			</svg>
-			New Lineitem
 		</Button>
 	</>
   )

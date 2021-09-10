@@ -24,7 +24,11 @@ export const StageContentRatio = styled.div`
 	background-color: hsl(198, 100%, 95%);
 `;
 
-export const StageContent = styled.div`
+interface ContentProps {
+	active: boolean,
+}
+
+export const StageContent = styled.div<ContentProps>`
 	transition: all .25s;
 	position: absolute;
 	width: 100%;
@@ -32,12 +36,12 @@ export const StageContent = styled.div`
 	display: flex;
 	flex-direction: row;
 	flex-wrap: none;
-	justify-content: flex-start;
+	justify-content: ${props => props.active ? "flex-start" : "center"};
 	align-items: center;
 `;
 
 interface StageProps {
-	active: boolean
+	active: boolean,
 }
 
 export const Stage = styled.button<StageProps>`
